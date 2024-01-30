@@ -1,0 +1,27 @@
+*b{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#box-container{
+    direction: ltr;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    box-shadow: 1px 2px 5px grey;
+}
+#pict{
+    width: 100%;
+}
+.box-btn{
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    width: 100%;
+    font-size: inherit;
+    height: 3rem;
+    margin-top: 0.5rem;
+}
