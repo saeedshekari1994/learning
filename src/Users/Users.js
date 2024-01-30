@@ -5,7 +5,7 @@ export default class Users extends Component {
     return (
       <div>
         <hr/>
-        <h1>Saeed's class component</h1>
+        <h1>This is Saeed's class component</h1>
       </div>
     )
   }

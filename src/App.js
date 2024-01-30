@@ -1,5 +1,5 @@
 import React from 'react'
-import Users from './Users/Users';
+import Clients from './Users/Users';
 import './App.css'
 import Product from './Product/Product';
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <Product/>
       <Product/>
       <Product/>
-      <Users/>
+      <Clients/>
     </div>
   )
 }
