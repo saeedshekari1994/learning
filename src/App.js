@@ -4,9 +4,9 @@ import './App.css'
 import Product from './Product/Product';
 import Box from './Box/Box';
 let allProducts = [
-  {id:1 , text: "AUX", src: './images/img2.jpg', price: 100, explain: "for car audio sys", count: 6},
-  {id:2 , text: "USB", src: 'img3.jpg', price: 2000, explain: "best and cheapest product", count: 12},
-  {id:3 , text: "Charger", src: './images/img1.jpg', price: 300, explain: "for mobile", count: 0}
+  {text: "AUX", src: './images/img2.jpg', price: 100, explain: "for car audio sys", count: 6},
+  {text: "USB", src: 'img3.jpg', price: 2000, explain: "best and cheapest product", count: 12},
+  {text: "Charger", src: './images/img1.jpg', price: 300, explain: "for mobile", count: 0}
 ]
 
 function App() {

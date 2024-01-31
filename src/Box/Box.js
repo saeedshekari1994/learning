@@ -33,16 +33,17 @@ import './Box.css'
 // }
 
 //or
-
-export default function Box({text,src,price,explain,count}) {  
+export default function Box({text: productText,src,price,explain,count}) {  
+  let text = 'introduction to products'
   return (
       price >200 && count &&
           <div id='box-container'>
-              <h2 className='text'>{text}</h2>
+              <h2 className='text'>{productText}</h2>
               <img src={src} alt='pic' id='pict'/>
               <p className='price'>{price} $</p>
               <p className='explain'>{explain}</p>
               <button className='box-btn'>Add to cart</button>
+              <p>{text}</p>
           </div>
       
     )
