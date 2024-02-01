@@ -3,7 +3,6 @@ import './App.css'
 import Modal from './Modal/Modal';
 import ModalClassComp from './ModalClassComponent/ModalClassComp';
 import Box from './Box/Box';
-import Validation from './PropTypes/Validation';
 import Users from './Users/Users';
 let allProducts = [
   {text: "AUX", price: 100, explain: "for car audio sys", count: 6},
@@ -65,9 +64,6 @@ function App() {
                     <p className='option'><a href='#'>functional comp is better</a></p>
                 </div>
           </ModalClassComp>
-          <Validation message="prop validation is very important" rank="3" isUsedCorrectly="true" role="leader">
-
-          </Validation>
 
     </div>
   )
