@@ -1,0 +1,41 @@
+.temp-box{
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 50px auto;
+    box-shadow: 2px 2px 5px rgb(26, 25, 25);
+    background-color: rgb(37, 37, 158);
+    border-radius: 15px;
+}
+.show-temp{
+    box-sizing: border-box;
+    width: 70%;
+    height: 135px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 1rem auto;
+    text-align: center;
+    padding-top: 45px;
+    font-size: 32px;
+    color: white;
+    margin-bottom: 3rem;
+}
+.cold{
+    background-color: rgb(37, 37, 158);;
+}
+.hot{
+    background-color: rgb(185, 6, 6);
+}
+.temp-btn{
+    font-size: 24px;
+    color: white;
+    width: 4rem;
+    border: 2px solid white;
+    outline: none;
+    background-color: grey ;
+    height: 4rem;
+    border-radius: 50%;
+}
+.temp-btn:active{
+    transform: scale(0.93);
+}
