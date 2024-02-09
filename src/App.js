@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Users from './Users/Users'
+import List from './List/List'
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -34,6 +35,7 @@ export default class App extends Component {
         {this.state.Users.map(user =>(
           <Users key={user.id} {...user} onRemove = {this.removeUserHandler}/>
         ))}
+        <List></List>
       </div>
     )
   }
