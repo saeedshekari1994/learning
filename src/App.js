@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import './App.css'
 import Users from './Users/Users'
 import List from './List/List'
+import Styling from './Styling/Styling'
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -36,6 +38,7 @@ export default class App extends Component {
           <Users key={user.id} {...user} onRemove = {this.removeUserHandler}/>
         ))}
         <List></List>
+        <Styling></Styling>
       </div>
     )
   }
