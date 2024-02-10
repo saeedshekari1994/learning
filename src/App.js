@@ -1,8 +1,14 @@
-function App() {
-  return (
-    <div>
-    </div>
-  )
-}
+import React, { Component } from 'react'
+import AddForm from './Booklist/AddForm'
+import Header from './Header/Header'
+export default class App extends Component {
 
-export default App;
+    render() {
+        return (
+            <div className='container mt-4'>
+                <Header></Header>
+                <AddForm></AddForm>
+            </div>
+        )
+    }
+}
