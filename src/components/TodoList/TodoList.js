@@ -46,13 +46,24 @@ export default class TodoList extends Component {
     }
     removeTodo(todoId){
         // console.log(todoId)
-        let filteredArray = this.state.todos.filter(todo => todo.id !== todoId)
+        let filteredArray = this.state.todos.filter(todo => {
+            return todo.id !== todoId
+        })
+        console.log(filteredArray);
         this.setState({
             todos : filteredArray
         })
     }
     editTodo(todoId){
-        console.log(todoId)
+        // console.log(todoId)
+        let newtodoArray = [...this.state.todos]
+        let targetToDO = newtodoArray.find(todo => {
+            return todo.id === todoId
+        })
+        targetToDO.completed = !targetToDO.completed
+        this.setState({
+            todos : newtodoArray
+        })
     }
 
     render() {
@@ -76,12 +87,24 @@ export default class TodoList extends Component {
 
                 <div className="todo-container">
                     <ul className="todo-list">
-                        
-                            {this.state.todos.map(todo => (
-                                <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo}/>
-                            )
-                                
-                                )}
+                        {this.state.status === 'completed' && this.state.todos.filter(todo => {
+                            return todo.completed === true
+                        }).map(todo => (
+                            <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo}/>
+                        ))
+                        }
+
+                        {this.state.status === 'uncompleted' && this.state.todos.filter(todo => {
+                            return todo.completed === false
+                        }).map(todo => (
+                            <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo}/>
+                        ))
+                        }
+
+                        {this.state.status === 'all' && this.state.todos.map(todo => (
+                            <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo}/>
+                             )
+                            )}
                         
                      
                     </ul>

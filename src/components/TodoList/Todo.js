@@ -9,10 +9,10 @@ export default class Todo extends Component {
     }
 
     render() {
-        let {id , title} = this.props
+        let {id , completed, title} = this.props
         return (
             // 'completed' class for completed todos
-            <div className='todo' style={{ display: 'flex' }}>
+            <div className={`todo ${completed ? 'completed' : ''}`} style={{ display: 'flex' }}>
                 <li className="todo-item">{title}</li>
 
                 <button className="check-btn" onClick={this.editCompleted.bind(this , id)}>
