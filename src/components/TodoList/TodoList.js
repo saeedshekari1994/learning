@@ -19,18 +19,54 @@ export default class TodoList extends Component {
         this.statusHandler = this.statusHandler.bind(this)
 
     }
+    todoTitleHandler(event){
+        let title = event.nativeEvent.target.value
+        this.setState({
+            todoTitle : title
+        })
+    }
+    addTodo(event){
+        event.preventDefault()
+        let newTodo = {
+            id : this.state.todos.length + 1, 
+            completed : false,
+            title : this.state.todoTitle
+        }
+        this.setState({
+            todos : [...this.state.todos , newTodo]
+        })
+        this.setState({
+            todoTitle : ''
+        })
+    }
+    statusHandler(event){
+        this.setState({
+            status : event.nativeEvent.target.value
+        })
+    }
+    removeTodo(todoId){
+        // console.log(todoId)
+        let filteredArray = this.state.todos.filter(todo => todo.id !== todoId)
+        this.setState({
+            todos : filteredArray
+        })
+    }
+    editTodo(todoId){
+        console.log(todoId)
+    }
 
     render() {
         return (
             <>
                 <Header />
-                <form>
-                    <input type="text" className="todo-input" maxLength="40"/>
+                <form onSubmit={this.addTodo}>
+                    <input type="text" className="todo-input" maxLength="40" value={this.state.todoTitle} 
+                    onChange={this.todoTitleHandler}/>
                     <button className="todo-button" type="submit">
                         <i className="fas fa-plus-square"></i>
                     </button>
                     <div className="select">
-                        <select name="todos" className="filter-todo">
+                        <select name="todos" className="filter-todo" onChange={this.statusHandler}>
                             <option value="all">All</option>
                             <option value="completed">Completed</option>
                             <option value="uncompleted">Uncompleted</option>
@@ -41,7 +77,11 @@ export default class TodoList extends Component {
                 <div className="todo-container">
                     <ul className="todo-list">
                         
-                            <Todo />
+                            {this.state.todos.map(todo => (
+                                <Todo key={todo.id} {...todo} onEdit={this.editTodo} onRemove={this.removeTodo}/>
+                            )
+                                
+                                )}
                         
                      
                     </ul>
