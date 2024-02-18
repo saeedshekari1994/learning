@@ -49,7 +49,7 @@ export default class TodoList extends Component {
         let filteredArray = this.state.todos.filter(todo => {
             return todo.id !== todoId
         })
-        console.log(filteredArray);
+        // console.log(filteredArray);
         this.setState({
             todos : filteredArray
         })
